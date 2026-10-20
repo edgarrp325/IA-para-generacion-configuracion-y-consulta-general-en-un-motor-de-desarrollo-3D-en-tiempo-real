@@ -1,2 +1,2 @@
 # IA para generación, configuración y consulta general en un motor de desarrollo 3D en tiempo real
-Asistente local para Unity 2022.3 con RAG (FastAPI, ChromaDB, Ollama y Qwen 3.5). Resuelve consultas técnicas del manual y ejecuta acciones en escena (crear objetos y configurar componentes) mediante skills atómicas y compilación dinámica en el editor, asegurando privacidad total.   eloading) en tiempo de edición. 
+Asistente local para Unity 2022.3 con RAG (FastAPI, ChromaDB, Ollama y Qwen 3.5). Resuelve consultas técnicas del manual y ejecuta acciones en escena (crear objetos y configurar componentes) mediante skills atómicas y compilación dinámica en el editor, asegurando privacidad total.
