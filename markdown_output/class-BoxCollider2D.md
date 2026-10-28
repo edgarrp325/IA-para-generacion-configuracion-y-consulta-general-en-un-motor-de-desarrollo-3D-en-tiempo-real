@@ -1,0 +1,35 @@
+---
+title: "Box Collider 2D"
+category: "General"
+source_file: "class-BoxCollider2D.html"
+doc_type: "manual"
+---
+
+# Box Collider 2D
+
+Switch to Scripting
+
+The **Box**Collider** 2D** is a Collider that interacts with the 2D physics system. It is a rectangle in shape with a defined position, width and height in the local coordinate space of a ****Sprite** 2D** is a Collider that interacts with the 2D physics system. It is a rectangle in shape with a defined position, width and height in the local coordinate space of a ****Sprite****. **Note:** The selection rectangle is axis-aligned, with its edges parallel to the X or Y axes of local space.
+
+Property | Function |   
+---|---|---  
+**Material** | Select the Physics Material 2D that determines properties of **collisions** that determines properties of **collisions** , such as friction and bounce.  
+**Is Trigger** | Enable this if you want this Collider 2D to behave as a trigger. The physics system ignores this Collider when this is enabled.  
+**Used by Effector** | Enable this if you want the Collider 2D to be used by an attached Effector 2D.  
+**Used by Composite** | Enable this if you want this Collider to be used by an attached Composite Collider 2D.  
+  
+**Note:** When you enable **Used by Composite** , other properties disappear from the Box Collider 2D component as they are now controlled by the attached Composite Collider 2D. The properties that disappear from the Box Collider 2D are **Material** , **Is Trigger** , **Used By Effector** , and **Edge Radius**.  
+**Auto Tiling** | Enable this if the Sprite Renderer component for the selected Sprite has the **Draw Mode** set to **Tiled**. This enables automatic updates to the shape of the Collider 2D, allowing the shape to automatically readjust when the Sprite’s dimensions change. If you don’t enable **Auto Tiling** , the Collider 2D geometry doesn’t automatically repeat.  
+**Offset** | Set the local offset values of the Collider 2D geometry.  
+**Size** | Set the size of the box in local space units.  
+**Edge Radius** | Set a value that forms a radius around the edge of the Collider. This results in a larger Collider 2D with rounded convex corners. The default value is 0 (no radius).  
+**Layer Overrides** | Expand for the Layer override settings.  
+| **Layer Override Priority** | Assign the decision priority that this Collider2D uses when resolving conflicting decisions on whether a contact between itself and another Collision2D should happen or not. Refer to its API page for more information.  
+| **Include Layers** | Select the additional Layers that this Collider 2D should include when deciding if a contact with another Collider2D should happen or not. Refer to its API documentation for more information.  
+| **Exclude Layers** | Select the additional Layers that this Collider 2D should exclude when deciding if a contact with another Collider2D should happen or not. Refer to its API documentation for more information.  
+| **Force Send Layers** | Select the Layers that this Collider 2D is allowed to send forces to during a Collision contact with another Collider2D. Refer to its API documentation for more information.  
+| **Force Receive Layers** | Select the Layers that this Collider 2D can receive forces from during a Collision contact with another Collider2D. Refer to its API documentation for more information.  
+| **Contract Capture Layers** | Select the Layers of other Collider 2D, involved in contacts with this Collider2D, that will be captured. Refer to its API documentation for more information.  
+| **Callback Layers** | Select the Layers that this Collider 2D, during a contact with another Collider2D, will report collision or trigger callbacks for. Refer to its API documentation for more information.  
+  
+BoxCollider2D

@@ -1,0 +1,38 @@
+---
+title: "Select a broad phase pruning algorithm"
+category: "General"
+source_file: "physics-optimization-cpu-broad-phase.html"
+doc_type: "manual"
+---
+
+# Select a broad phase pruning algorithm
+
+Select the most efficient broad phase pruning algorithm.
+
+In the Unity Editor, you can select these algorithms for broad phase **collision** detection:
+
+  * Sweep and Prune (SAP): Projects Axis-Aligned Bounding Boxes (AABBs) onto axes. While generally efficient, SAP can generate false positives in large, flat worlds with many **colliders**. In these scenarios, it can identify pairs of objects for narrow phase collision checking that aren’t actually close and projections can overlap even if the objects are distant.
+  * Automatic Box Pruning: Divides the world into a grid and automatically configures the boundaries and cell sizes of the world based on your **scene** ’s content. This can significantly reduce the number of pairs that need narrow phase checks in suitable environments.
+
+SAP is the default broad phase algorithm for 3D physics. If you want to select the Automatic Box Pruning algorithm, there are several associated drawbacks you must consider:
+
+  * Overhead in highly dynamic scenes: If your scene contains many objects that are all constantly and rapidly moving across grid cell boundaries, the overhead of updating their positions within the grid might negate or even outweigh the pruning benefits. In highly dynamic scenarios, the Sweep and Prune broad phase might be more efficient.
+  * Automatic grid configuration: The automatically determined grid might not be optimal for every conceivable scene layout. While it aims for a good general-purpose configuration, specific or unusual world structures might not have as high performance benefits.
+  * Initial setup and reconfiguration: There’s an initial performance cost to build the grid. If your world’s physical bounds change drastically at runtime, the system might need to reconfigure the grid, potentially causing a temporary performance spike.
+  * Memory usage: The grid structure consumes some memory, though typically not a major concern.
+
+Automatic Box Pruning generally performs well in large, open worlds, or scenes with many static or infrequently moving colliders. For smaller, dense scenes or scenes with extreme numbers of rapidly moving objects, **Sweep and Prune** might be a better choice. Always profile your specific scenes using the **Unity Profiler**, and focus on physics broad phase processing time, to determine which broad phase type yields the best performance for your game.
+
+To change the broad phase type: 
+
+  1. Select **Edit > Project Settings** to open the Project Settings window.
+  2. Select the **Physics > Settings** tab.
+  3. Select the ****GameObject**** tab.
+  4. In **Broad phase Type** , select a broad phase type algorithm.
+
+## Additional resources
+
+  * Unity Profiler
+  * Memory Profiler
+  * Physics Project Settings
+  * Collision detection
